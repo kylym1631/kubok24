@@ -1,0 +1,98 @@
+ html{
+    scroll-behavior: smooth;
+ }
+
+ [x-cloak] {
+    display: none !important;
+}
+
+
+ /* reveal */
+
+.loading {
+    opacity: 0;
+    -webkit-transform: translateY(45px);
+    transform: translateY(45px);
+    -webkit-transition: opacity 1s, -webkit-transform 0.8s;
+    transition: opacity 1s, -webkit-transform 0.8s;
+    transition: transform 0.8s, opacity 1s;
+    transition: transform 0.8s, opacity 1s, -webkit-transform 0.8s;
+}
+
+.loading.loaded {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+}
+
+ /* glitch */
+
+ button[type=submit] {
+    /* width: 15rem; */
+    /* height: 4rem; */
+    /* font-size: 1.2rem; */
+    transform: skewX(-20deg); /* Tilts the button 20 degrees to the left */
+    background-color: #eee;
+    color: black;
+    box-shadow: -5px 5px #aaa;
+    animation: glitch 3s linear infinite;
+    font-family: Source Code Pro;
+    transition: all .2s;
+}
+
+button[type=submit]:active {
+    transform: translateX(-5px) translateY(5px);
+    transform: skewX(-20deg); /* Tilts the button 20 degrees to the left */
+    box-shadow: -2px 2px #aaa;
+    transition: all .2s;
+}
+
+@keyframes glitch {
+    0% {
+        transform: rotateX(10deg) skewX(90deg);
+        background-color: #0ffbf9;
+        filter: blur(3px);
+    }
+    1% {
+        transform: none;
+        background-color: #eee;
+        filter: blur(0);
+    }
+    2% {
+        transform: rotateX(10deg) skewX(90deg);
+        background-color: #cc0f39;
+        filter: blur(3px);
+    }
+    3% {
+        transform: rotateX(12deg) skewX(79deg);
+        background-color: #eee;
+        filter: blur(0);
+    }
+    4% {
+        transform: translateX(20px) skewX(11deg);
+        background-color: #0ffbf9;
+        filter: blur(3px);
+    }
+    5% {
+        transform: rotateY(10deg) skewY(30deg);
+        background-color: #eee;
+        filter: blur(0);
+    }
+    6% {
+        transform: translateX(-50px) skewX(40deg);
+        background-color: #cc0f39;
+        filter: blur(3px);
+    }
+    7% {
+        transform: rotateX(7deg) skewX(81deg);
+        background-color: #eee;
+        filter: blur(0);
+    }
+    8% {
+        transform: none;
+        transform: skewX(-20deg); /* Tilts the button 20 degrees to the left */
+
+    }
+}
